@@ -3,7 +3,7 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended',
-        'prettier/@typescript-eslint', //使得@typescript-eslint中的样式规范失效，遵循prettier中的样式规范。
+        'prettier', //使得@typescript-eslint中的样式规范失效，遵循prettier中的样式规范。
         'plugin:prettier/recommended', //使用prettier中的样式规范，且如果使得ESLint会检测prettier的格式问题，同样将格式问题以error的形式抛出。
     ], //定义文件继承的子规范 后面相同名称的配置会覆盖之前的配置
     plugins: ['@typescript-eslint', 'react'], //定义了该eslint文件所依赖的插件
@@ -57,7 +57,7 @@ module.exports = {
         'no-new-func': 1, //禁止使用new Function
         'no-new-object': 2, //禁止使用new Object()
         'no-self-compare': 2, //不能比较自身
-        'no-unused-vars': 'error', //不能有声明后未被使用的变量或参数
+        "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }], //不能有声明后未被使用的变量或参数
         'no-use-before-define': 0, //未定义前不能使用
         'valid-typeof': 2, //无效的类型判断
         'wrap-iife': [2, 'inside'], //立即执行函数表达式的小括号风格
