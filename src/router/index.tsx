@@ -1,21 +1,23 @@
 import { RouteObject, Navigate } from 'react-router-dom'
 import React from 'react'
 
-import Home from '@/view/Home'
-import About from '@/view/About'
+import Login from '@/view/User/Login'
+import BlankLayout from '@/layouts/BlankLayout'
 
 const routes: RouteObject[] = [
     {
+        path: '/user',
+        element: <BlankLayout />,
+        children: [
+            {
+                path: '/user/login',
+                element: <Login />,
+            },
+        ],
+    },
+    {
         path: '/',
-        element: <Navigate to="home" />,
-    },
-    {
-        path: '/home',
-        element: <Home />,
-    },
-    {
-        path: '/about',
-        element: <About />,
+        element: <Navigate to="/user/login" />,
     },
 ]
 
