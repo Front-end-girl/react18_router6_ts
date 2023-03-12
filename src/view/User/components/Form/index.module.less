@@ -46,6 +46,9 @@
             }
         }
     }
+    .shake-horizontal {
+        animation: doudong .4s linear;
+    }
     .login-third {
         width: 70%;
         margin: 30px auto;
@@ -53,5 +56,19 @@
             width: 35px;
             height: 35px;
         }
+    }
+}
+@keyframes doudong {
+    0% {
+        transform: translateX(-10px);
+    }
+    25% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(10px);
     }
 }
