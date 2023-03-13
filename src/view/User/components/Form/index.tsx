@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import styles from './index.module.less'
+import { Link } from 'react-router-dom'
 
 function Form() {
     const [agreed, setAgreed] = useState<boolean>(false)
@@ -22,6 +23,7 @@ function Form() {
         <div className={styles['login-form']}>
             <button onClick={jumpToLogin}>手机号登录</button>
             <button>立即体验</button>
+            <Link to="/user/inputphone">inputPhone</Link>
             <div className={`${styles['login-agree']} d-flex-center`} ref={checkBoxRef}>
                 <input type="checkbox" id="tiaokuan" hidden onChange={onChangeChecked}></input>
                 <label htmlFor="tiaokuan"></label>

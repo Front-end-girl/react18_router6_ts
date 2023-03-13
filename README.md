@@ -19,3 +19,9 @@ declare module '*.svg' {
    定义router文件
    引入main.ts BrowserRouter
    懒加载路由
+
+4. 左右翻页 研究组件实现原理
+安装 npm install react-animated-router@latest --save
+安装 npm install react-transition-group --save
+<a>https://www.npmjs.com/package/react-animated-router</a>
+

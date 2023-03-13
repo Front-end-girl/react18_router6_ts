@@ -1,11 +1,16 @@
 import React from 'react'
 import routes from '@/router'
-import { useRoutes } from 'react-router-dom'
+
+// 非动画形式
+// import { useRoutes } from 'react-router-dom'
+// const element = useRoutes(routes)
+
+import { useAnimatedRoutes } from 'react-animated-router'
 
 function App() {
-    const element = useRoutes(routes)
+    const element = useAnimatedRoutes(routes)
 
-    return <div className="app"> {element}</div>
+    return <div className="app">{element}</div>
 }
 
 export default App
