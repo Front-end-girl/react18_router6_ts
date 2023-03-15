@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './index.module.less'
-import { Link } from 'react-router-dom'
 
 function Form() {
     const [agreed, setAgreed] = useState<boolean>(false)
     const checkBoxRef = useRef<HTMLDivElement>(null)
+    const navigate = useNavigate()
 
     const onChangeChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
         setAgreed(e.target.checked)
@@ -16,14 +17,18 @@ function Form() {
             setTimeout(() => {
                 checkBoxRef.current!.classList.remove(styles['shake-horizontal'])
             }, 500)
+        } else {
+            // navigate('/user/inputphone', { replace: true })
+            navigate('/user/inputphone')
         }
     }
 
     return (
         <div className={styles['login-form']}>
             <button onClick={jumpToLogin}>手机号登录</button>
-            <button>立即体验</button>
-            <Link to="/user/inputphone">inputPhone</Link>
+            <button>
+                <Link to="/home">立即体验</Link>
+            </button>
             <div className={`${styles['login-agree']} d-flex-center`} ref={checkBoxRef}>
                 <input type="checkbox" id="tiaokuan" hidden onChange={onChangeChecked}></input>
                 <label htmlFor="tiaokuan"></label>

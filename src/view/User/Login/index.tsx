@@ -2,7 +2,7 @@ import React from 'react'
 import './index.less'
 import Logo from '../components/Logo'
 import Form from '../components/Form'
-
+import KeepAlive from 'react-activation'
 interface IProps {
     title: string
 }
@@ -11,7 +11,9 @@ function Login(props: IProps) {
     return (
         <div className="login d-flex flex-direction-column">
             <Logo></Logo>
-            <Form></Form>
+            <KeepAlive>
+                <Form></Form>
+            </KeepAlive>
         </div>
     )
 }

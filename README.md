@@ -16,12 +16,19 @@ declare module '*.svg' {
 
 3. 安装路由
    npm install react-router-dom --save
-   定义router文件
-   引入main.ts BrowserRouter
+   定义 router 文件
+   引入 main.ts BrowserRouter
    懒加载路由
 
 4. 左右翻页 研究组件实现原理
-安装 npm install react-animated-router@latest --save
-安装 npm install react-transition-group --save
-<a>https://www.npmjs.com/package/react-animated-router</a>
+   安装 npm install react-animated-router@latest --save
+   安装 npm install react-transition-group --save
+   <a>https://www.npmjs.com/package/react-animated-router</a>
 
+5. 安装缓存组件 react-activation 对指定的软件
+
+```
+  <KeepAlive>
+                <Form></Form>
+  </KeepAlive>
+```
