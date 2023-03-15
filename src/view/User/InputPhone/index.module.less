@@ -1,5 +1,44 @@
-.input-phone{
+.input-phone {
     width: 100%;
     height: 100vh;
-    background-color: pink;
+    .input-text {
+        width: 80%;
+        margin: 30% auto 0;
+        border-bottom: 1px solid rgb(204, 204, 204);
+        box-sizing: content-box;
+        font-size: 22px;
+        color: black;
+        padding-bottom: 10px;
+        input {
+            flex: 1;
+            height: 32px;
+            line-height: 32px;
+            border: none;
+            outline: none;
+            margin-left: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            height: 30px;
+            line-height: 30px;
+            color: #343434;
+        }
+    }
+    .input-btn {
+        display: block;
+        cursor: pointer;
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 30px;
+        height: 40px;
+        background: #db3730;
+        text-align: center;
+        color: #fff;
+        line-height: 40px;
+        margin-top: 30px;
+        border: none;
+        font-size: 16px;
+        &:disabled {
+            opacity: 0.3;
+        }
+    }
 }

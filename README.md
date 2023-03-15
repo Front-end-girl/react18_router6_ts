@@ -32,3 +32,4 @@ declare module '*.svg' {
                 <Form></Form>
   </KeepAlive>
 ```
+6. input 光标不闪烁
