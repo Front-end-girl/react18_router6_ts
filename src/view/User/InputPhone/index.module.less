@@ -41,4 +41,78 @@
             opacity: 0.3;
         }
     }
+    .code-styles {
+        padding: 20px;
+        .v-code-text {
+            margin-top: 30px;
+        }
+        .v-code {
+            display: flex;
+            justify-content: space-around;
+            input {
+                position: absolute;
+                top: -100%;
+                left: -100%;
+                opacity: 0;
+            }
+            .line {
+                position: relative;
+                width: 40px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                font-size: 28px;
+                display: inline-block;
+                &::after {
+                    display: block;
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    width: 100%;
+                    bottom: 0;
+                    height: 1px;
+                    background-color: #aaaaaa;
+                    -webkit-transform: scaleY(0.5);
+                    -ms-transform: scaleY(0.5);
+                    transform: scaleY(0.5);
+                    -webkit-transform-origin: 0 100%;
+                    -ms-transform-origin: 0 100%;
+                    transform-origin: 0 100%;
+                }
+            }
+            .animated {
+                &::before {
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    top: 20%;
+                    width: 1px;
+                    height: 60%;
+                    content: '';
+                    background-color: #333333;
+                    animation-name: coruscate;
+                    animation-duration: 1s;
+                    animation-iteration-count: infinite;
+                    animation-fill-mode: both;
+                }
+            }
+            @keyframes coruscate {
+                0% {
+                    opacity: 0;
+                }
+                25% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                75% {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+        }
+    }
 }
