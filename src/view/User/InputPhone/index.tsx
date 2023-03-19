@@ -8,7 +8,7 @@ const maxLength = 4
 function InputPhone() {
     const [phone, setPhone] = useState<string>('')
     const inputRef = useRef<HTMLInputElement>(null)
-    const sentStatus = useState<boolean>(true)
+    const sentStatus = useState<boolean>(false)
     const [vcode, setVcode] = useState('')
     const [cursorIndex, setCursorIndex] = useState(0)
     const inputCodeRef = useRef<HTMLInputElement>(null)
