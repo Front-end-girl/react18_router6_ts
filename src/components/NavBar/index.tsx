@@ -15,7 +15,7 @@ function NavBar(props: IProps) {
 
     return (
         <div className={`${styles['nav-bar']} d-flex-center`}>
-            <img src={backImg} onClick={back}></img>
+            <img src={backImg} onClick={() => back()}></img>
             <span>{props.title}</span>
         </div>
     )

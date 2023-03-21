@@ -25,7 +25,7 @@ function Form() {
 
     return (
         <div className={styles['login-form']}>
-            <button onClick={jumpToLogin}>手机号登录</button>
+            <button onClick={() => jumpToLogin()}>手机号登录</button>
             <button>
                 <Link to="/home">立即体验</Link>
             </button>

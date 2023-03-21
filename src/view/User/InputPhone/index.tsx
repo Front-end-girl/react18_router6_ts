@@ -45,10 +45,15 @@ function InputPhone() {
         if (timer === 0) {
             clearInterval(Timer)
         }
+    }, [timer])
+
+    useEffect(() => {
+        // 清除定时器
         return () => {
             clearInterval(Timer)
         }
-    }, [timer])
+    }, [])
+
     useEffect(() => {
         // 延迟保证翻页动画生效
         setTimeout(() => {
@@ -69,7 +74,7 @@ function InputPhone() {
                     <button
                         className={`${styles['input-btn']} d-flex-center`}
                         disabled={trimPhone(phone).length !== 11}
-                        onClick={getCode}
+                        onClick={() => getCode()}
                     >
                         下一步
                     </button>
@@ -83,7 +88,7 @@ function InputPhone() {
                         </div>
                     </div>
                     <div className={`d-flex justify-end ${styles['code-timer']}`}>
-                        {timer ? <span>{timer}S</span> : <span>重新发送</span>}
+                        {timer ? <span>{timer}S</span> : <span className={styles['code-repeat']}>重新发送</span>}
                     </div>
                     <div className={styles['v-code-text']}>验证码</div>
                     <div className={styles['v-code']}>
