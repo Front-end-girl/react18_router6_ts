@@ -3,11 +3,12 @@ import './index.less'
 import Logo from '../components/Logo'
 import Form from '../components/Form'
 import KeepAlive from 'react-activation'
-interface IProps {
-    title: string
-}
+// interface IProps {
+//     title: string
+// }
 // eslint-disable-next-line no-unused-vars
-function Login(props: IProps) {
+// props: IProps
+function Login() {
     return (
         <div className="login d-flex flex-direction-column">
             <Logo></Logo>
@@ -17,7 +18,7 @@ function Login(props: IProps) {
         </div>
     )
 }
-Login.defaultProps = {
-    title: '',
-}
+// Login.defaultProps = {
+//     title: '',
+// }
 export default Login

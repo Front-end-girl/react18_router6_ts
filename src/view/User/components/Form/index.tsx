@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './index.module.less'
+import weChat from '/src/assets/wechat.svg'
+import sina from '/src/assets/sina.svg'
+import mail from '/src/assets/mail.svg'
 
 function Form() {
     const [agreed, setAgreed] = useState<boolean>(false)
@@ -38,9 +41,9 @@ function Form() {
                 <a>《隐私政策》</a>
             </div>
             <div className={`${styles['login-third']} d-flex-center justify-content-between `}>
-                <img src="/src/assets/wechat.svg" />
-                <img src="/src/assets/sina.svg" />
-                <img src="/src/assets/mail.svg" />
+                <img src={weChat} />
+                <img src={sina} />
+                <img src={mail} />
             </div>
         </div>
     )
