@@ -5,11 +5,15 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import 'react-animated-router/animate.css'
 import { AliveScope } from 'react-activation'
+import { Provider } from 'react-redux'
+import { composeStore } from './store'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    <BrowserRouter>
-        <AliveScope>
-            <App />
-        </AliveScope>
-    </BrowserRouter>,
+    <Provider store={composeStore}>
+        <BrowserRouter>
+            <AliveScope>
+                <App />
+            </AliveScope>
+        </BrowserRouter>
+    </Provider>,
 )

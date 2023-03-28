@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import styles from './index.module.less'
+import { Link } from 'react-router-dom'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import './carousel.less'
 import { Carousel } from 'react-responsive-carousel'
+import { connect } from 'react-redux'
+import { increment } from '@/store/reducer'
 
-const Recommend = () => {
+const Recommend = (props: any) => {
     const [bannerList] = useState([
         {
             url: '',
@@ -73,8 +76,23 @@ const Recommend = () => {
                     ))}
                 </div>
             </div>
+            <button onClick={() => props.add(props.count)}>添加</button>
+            {props.count}
+            <Link to="/user/login">返回登录页</Link>
         </div>
     )
 }
+// 映射Redux全局的state到组件的props上
+const mapStateToProps = (state: any) => ({
+    count: state.test,
+})
 
-export default Recommend
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+        add(value: number) {
+            dispatch(increment(value + 1))
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Recommend)
