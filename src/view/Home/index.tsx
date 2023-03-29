@@ -43,7 +43,7 @@ function Home() {
     const [cssTransitionClass, setCssTransitionClass] = useState('push-in-right')
 
     return (
-        <>
+        <div>
             <div className={styles['home-header']}>
                 <div className={`d-flex justify-content-between ${styles['home-top']}`}>
                     <span className="iconfont menu">&#xe8c9;</span>
@@ -67,7 +67,7 @@ function Home() {
             <CSSTransition timeout={500} classNames={cssTransitionClass} in={showAnimate} exit={false}>
                 {childrenCom}
             </CSSTransition>
-        </>
+        </div>
     )
 }
 

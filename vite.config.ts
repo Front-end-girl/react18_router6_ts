@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import { visualizer } from 'rollup-plugin-visualizer'
-import postcsspxtoviewport from 'postcss-px-to-viewport'
+import postcsspxtorem from 'postcss-pxtorem'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -35,19 +35,20 @@ export default defineConfig({
         },
         postcss: {
             plugins: [
-                postcsspxtoviewport({
-                    unitToConvert: 'px',
-                    viewportWidth: 375,
-                    unitPrecision: 6,
+                postcsspxtorem({
+                    // 375的设计稿 使用amfe-flexble 插件
+                    rootValue: 37.5,
                     propList: ['*'],
-                    viewportUnit: 'vw',
-                    fontViewportUnit: 'vw',
+                    unitPrecision: 6,
                     selectorBlackList: ['ignore-'],
                     minPixelValue: 1,
                     mediaQuery: true,
                     replace: true,
-                    exclude: [/node_modules/],
-                    landscape: false,
+                    exclude: e => {
+                        const list = [/node_modules/, /media/]
+
+                        return list.some(i => i.test(e))
+                    },
                 }),
             ],
         },
