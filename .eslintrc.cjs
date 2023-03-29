@@ -57,7 +57,6 @@ module.exports = {
         'no-new-func': 1, //禁止使用new Function
         'no-new-object': 2, //禁止使用new Object()
         'no-self-compare': 2, //不能比较自身
-        "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }], //不能有声明后未被使用的变量或参数
         'no-use-before-define': 0, //未定义前不能使用
         'valid-typeof': 2, //无效的类型判断
         'wrap-iife': [2, 'inside'], //立即执行函数表达式的小括号风格
@@ -123,6 +122,8 @@ module.exports = {
         'react/display-name': 0, // 一个莫名其妙的Bug
         'react/no-find-dom-node': 0,
         '@typescript-eslint/no-non-null-assertion': 0, // 允许用！断言不为空
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'error',
     },
     settings: {
         //自动发现React的版本，从而进行规范react代码

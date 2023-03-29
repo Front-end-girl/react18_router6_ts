@@ -1,8 +1,8 @@
 import { createStore, combineReducers } from 'redux'
-import Reducer from './reducer'
+import recommend from './module/recommend/reducer'
 
 export const composeStore = createStore(
     combineReducers({
-        test: Reducer,
+        recommend,
     }),
 )
