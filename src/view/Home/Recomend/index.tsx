@@ -12,6 +12,7 @@ interface IProps {
     changeBannerList: (data: bannerType[]) => void
 }
 const Recommend = (props: IProps) => {
+    console.log(props)
     const { bannerList, changeBannerList } = props
     const [singers] = useState([
         {
@@ -88,6 +89,7 @@ const Recommend = (props: IProps) => {
 // 映射Redux全局的state到组件的props上
 const mapStateToProps = (state: any) => ({
     bannerList: state.recommend.bannerList,
+    userInfo: state.user.userInfo,
 })
 
 const mapDispatchToProps = (dispatch: any) => {

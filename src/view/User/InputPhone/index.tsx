@@ -1,7 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './index.module.less'
 import NavBar from '@/components/NavBar'
+import store from '@/store/index'
+import { changeUserInfo } from '@/store/module/user/action'
 import { trimPhone } from '@/utils/index'
+import { sentVcode, loginByVcode } from '@/utils/api'
+import { Toast } from '@nutui/nutui-react'
 
 const maxLength = 4
 let Timer: number
@@ -32,9 +36,27 @@ function InputPhone() {
 
         setVcode(val)
         setCursorIndex(val.length)
+        if (val.length === 4) {
+            loginByVcode(Number(trimPhone(phone)), vcode).then(res => {
+                console.log(res)
+                store.dispatch(changeUserInfo(res))
+            })
+        }
     }
+    // 获取验证码
     const getCode = () => {
-        setSendStatus(true)
+        sentVcode(Number(trimPhone(phone))).then(res => {
+            // 定义了泛型 这里的点提示
+            if (res.code === 200 && res.data) {
+                setSendStatus(true)
+                codeInterval()
+            } else {
+                Toast.text(res.message)
+            }
+        })
+    }
+
+    const codeInterval = () => {
         Timer = window.setInterval(() => {
             // 设置一个函数才能获取当前值
             setTimer(timer => timer - 1)

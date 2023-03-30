@@ -9,6 +9,7 @@ import { AliveScope } from 'react-activation'
 import { Provider } from 'react-redux'
 import { composeStore } from './store'
 import 'amfe-flexible/index.js'
+import '@nutui/nutui-react/dist/style.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <Provider store={composeStore}>

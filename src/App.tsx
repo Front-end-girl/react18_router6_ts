@@ -1,5 +1,6 @@
 import React from 'react'
 import routes from '@/router'
+import './app.css'
 
 // 非动画形式
 // import { useRoutes } from 'react-router-dom'
