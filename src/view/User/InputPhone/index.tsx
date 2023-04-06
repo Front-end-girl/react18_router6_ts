@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './index.module.less'
 import NavBar from '@/components/NavBar'
-import store from '@/store/index'
-import { changeUserInfo } from '@/store/module/user/action'
 import { trimPhone } from '@/utils/index'
 import { sentVcode, loginByVcode } from '@/utils/api'
 import { Toast } from '@nutui/nutui-react'
@@ -36,13 +34,8 @@ function InputPhone() {
 
         setVcode(val)
         setCursorIndex(val.length)
-        if (val.length === 4) {
-            loginByVcode(Number(trimPhone(phone)), vcode).then(res => {
-                console.log(res)
-                store.dispatch(changeUserInfo(res))
-            })
-        }
     }
+
     // 获取验证码
     const getCode = () => {
         sentVcode(Number(trimPhone(phone))).then(res => {
@@ -63,6 +56,14 @@ function InputPhone() {
         }, 1000)
     }
 
+    useEffect(() => {
+        if (vcode.length === 4) {
+            loginByVcode(Number(trimPhone(phone)), vcode).then(res => {
+                
+
+            })
+        }
+    }, [vcode])
     useEffect(() => {
         if (timer === 0) {
             clearInterval(Timer)

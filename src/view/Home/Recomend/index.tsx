@@ -13,7 +13,9 @@ interface IProps {
 }
 const Recommend = (props: IProps) => {
     console.log(props)
+    // 应用store数据
     const { bannerList, changeBannerList } = props
+
     const [singers] = useState([
         {
             url: 'https://p1.music.126.net/6wq2s3Rtm8aJYvAoHKmgyA==/109951163202408350.jpg?param=300x300',
@@ -52,6 +54,7 @@ const Recommend = (props: IProps) => {
             },
         ])
     }, [])
+
     return (
         <div id="recommend" className={styles['recommend']}>
             <div className={`${styles['recommend-banner']}`}>
@@ -87,10 +90,13 @@ const Recommend = (props: IProps) => {
     )
 }
 // 映射Redux全局的state到组件的props上
-const mapStateToProps = (state: any) => ({
-    bannerList: state.recommend.bannerList,
-    userInfo: state.user.userInfo,
-})
+const mapStateToProps = (state: any) => {
+    console.log('值更新', state.recommend.bannerList)
+    return {
+        bannerList: state.recommend.bannerList,
+        userInfo: state.user.userInfo,
+    }
+}
 
 const mapDispatchToProps = (dispatch: any) => {
     return {

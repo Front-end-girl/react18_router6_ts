@@ -1,4 +1,12 @@
-import React, { useState } from 'react'
+/*
+ * @Author: luoyunna 17666067919
+ * @Date: 2023-03-22 14:48:31
+ * @LastEditors: luoyunna 17666067919
+ * @LastEditTime: 2023-04-06 17:45:29
+ * @FilePath: \maintain_frontd:\Study\react18_router6_ts\src\view\Home\index.tsx
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+import React, { useEffect, useState } from 'react'
 import styles from './index.module.less'
 import { CSSTransition } from 'react-transition-group'
 

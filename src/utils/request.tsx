@@ -13,6 +13,7 @@ export const axiosInstance = axios.create({
 // 定义拦截函数
 axiosInstance.interceptors.response.use(
     res => {
+        console.log(res)
         if (res.status !== 200) {
             Toast.fail(`服务器出错啦～状态码:${res.status}| ${res.data.message}`)
             return Promise.reject(res)
@@ -20,7 +21,9 @@ axiosInstance.interceptors.response.use(
         return res
     },
     err => {
-        Toast.fail(`服务器出错啦～状态码:${err.status}| ${err.data.message}`)
+        const response = err.response
+
+        Toast.fail(`状态码:${response.status}| ${response.data.message}`)
         return Promise.reject(err)
     },
 )
