@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
 import { Toast } from '@nutui/nutui-react'
 
-export const baseUrl = 'http://localhost:3000/'
+export const baseUrl = '/api'
 
 // 创建一个axios实例
 export const axiosInstance = axios.create({
@@ -13,7 +13,6 @@ export const axiosInstance = axios.create({
 // 定义拦截函数
 axiosInstance.interceptors.response.use(
     res => {
-        console.log(res)
         if (res.status !== 200) {
             Toast.fail(`服务器出错啦～状态码:${res.status}| ${res.data.message}`)
             return Promise.reject(res)

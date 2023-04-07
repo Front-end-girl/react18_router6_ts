@@ -10,14 +10,19 @@ import * as actionTypes from './constants'
 
 const initialState = {
     bannerList: [],
+    recomendList: [],
 }
 
 export default (state = initialState, action: any) => {
-    const stateCopy = { ...state } // 使用新的地址 否则子组件dispatch 之后不更新  查看fix项目使用的插件
+    // 使用新的地址 否则子组件dispatch 之后不更新  查看fix项目使用的插件
+    const stateCopy = { ...state }
 
     switch (action.type) {
         case actionTypes.CHANGE_BANNER:
             stateCopy.bannerList = action.data
+            return stateCopy
+        case actionTypes.CHANGE_RECOMMEND:
+            stateCopy.recomendList = action.data
             return stateCopy
         default:
             return stateCopy

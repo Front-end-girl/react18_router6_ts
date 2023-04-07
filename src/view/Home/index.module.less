@@ -1,41 +1,46 @@
-.home-header {
-    .home-top {
-        padding: 5px 10px;
-        background: #d44439;
-        color: #fff;
-        > span {
-            line-height: 40px;
-            color: #f1f1f1;
-            font-size: 20px;
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    .home-header {
+        .home-top {
+            padding: 5px 10px;
+            background: #d44439;
+            color: #fff;
+            > span {
+                line-height: 40px;
+                color: #f1f1f1;
+                font-size: 20px;
+            }
         }
-    }
-    .home-top_navbar {
-        background: #d44439;
-        > div {
-            flex: 1;
-            text-align: center;
-            color: #f1f1f1;
-            font-size: 14px;
-            height: 40px;
-            line-height: 40px;
-            span {
-                padding: 3px 0;
-                position: relative;
-                &::after {
-                    display: inline-block;
-                    content: '';
-                    position: absolute;
-                    left: 50%;
-                    bottom: 0;
-                    width: 0;
-                    height: 2px;
-                    transition: all 0.3s linear;
-                }
-                &.border-bottom {
+        .home-top_navbar {
+            background: #d44439;
+            > div {
+                flex: 1;
+                text-align: center;
+                color: #f1f1f1;
+                font-size: 14px;
+                height: 40px;
+                line-height: 40px;
+                span {
+                    padding: 3px 0;
+                    position: relative;
                     &::after {
-                        width: 100%;
-                        left: 0;
-                        background-color: #fff;
+                        display: inline-block;
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        bottom: 0;
+                        width: 0;
+                        height: 2px;
+                        transition: all 0.3s linear;
+                    }
+                    &.border-bottom {
+                        &::after {
+                            width: 100%;
+                            left: 0;
+                            background-color: #fff;
+                        }
                     }
                 }
             }

@@ -1,4 +1,6 @@
 .recommend {
+    flex: 1;
+    overflow: auto;
     .recommend-banner {
         width: calc(100% - 10px);
         overflow: hidden;
@@ -17,12 +19,12 @@
     .singers-list {
         flex-wrap: wrap;
         padding: 0 2.5px;
+        justify-content: center;
         .singers-list-item {
-            width: 120px;
+            width: 32%;
             margin-right: 5px;
             img {
-                width: 120px;
-                height: 120px;
+                width: 100%;
             }
             .item-text {
                 height: 50px;
