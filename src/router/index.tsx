@@ -1,8 +1,9 @@
 import { RouteObject, Navigate } from 'react-router-dom'
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import BlankLayout from '@/layouts/BlankLayout'
 
-import Login from '@/view/User/Login'
+const Login = lazy(() => import('@/view/User/Login'))
+
 import InputPhone from '@/view/User/InputPhone'
 
 import Home from '@/view/Home'
@@ -14,7 +15,11 @@ const routes: RouteObject[] = [
         children: [
             {
                 path: '/user/login',
-                element: <Login />,
+                element: (
+                    <Suspense fallback={<div>路由加载ing...</div>}>
+                        <Login />
+                    </Suspense>
+                ),
             },
             {
                 path: '/user/inputphone',

@@ -22,7 +22,7 @@
         "suppressImplicitAnyIndexErrors": false,
         "skipLibCheck": true,
         "noResolve": false,
-        "module": "es2015",
+        "module": "esnext",
         "allowJs": true,
         "target": "es6",
         "jsx": "react",
