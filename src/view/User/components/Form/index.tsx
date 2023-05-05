@@ -4,6 +4,11 @@ import styles from './index.module.less'
 import weChat from '/src/assets/wechat.svg'
 import sina from '/src/assets/sina.svg'
 import mail from '/src/assets/mail.svg'
+// 获取路由的参数
+// import { useParams, useSearchParams  } from "react-router-dom";
+// useParams 获取动态路由的值；
+// useSearchParams 获取查询字符串的值。
+// https://blog.csdn.net/weixin_44051815/article/details/121413076
 
 function Form() {
     const [agreed, setAgreed] = useState<boolean>(false)
